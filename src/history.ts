@@ -169,7 +169,8 @@ class HistEvent {
     readonly startSelection: EditorSelection | undefined,
     // Stores selection changes after this event, to be used for
     // selection undo/redo.
-    readonly selectionsAfter: readonly EditorSelection[]
+    readonly selectionsAfter: readonly EditorSelection[],
+    readonly userEvent: string | undefined
   ) {}
 
   setSelAfter(after: readonly EditorSelection[]) {
