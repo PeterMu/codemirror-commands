@@ -324,7 +324,7 @@ class HistoryState {
          userEvent == "input.type.compose") || (lastEvent && lastEvent.userEvent === 'input.type.compose')) {
       done = updateBranch(done, done.length - 1, maxLen,
                           new HistEvent(event.changes.compose(lastEvent.changes), conc(event.effects, lastEvent.effects),
-                                        lastEvent.mapped, lastEvent.startSelection, none))
+                                        lastEvent.mapped, lastEvent.startSelection, none, userEvent))
     } else {
       done = updateBranch(done, done.length, maxLen, event)
     }
