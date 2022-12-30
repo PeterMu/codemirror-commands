@@ -321,7 +321,7 @@ class HistoryState {
           time - this.prevTime < newGroupDelay &&
           isAdjacent(lastEvent.changes, event.changes)) ||
          // For compose (but not compose.start) events, always join with previous event
-         userEvent == "input.type.compose")) {
+         userEvent == "input.type.compose") || (lastEvent && lastEvent.userEvent === 'input.type.compose')) {
       done = updateBranch(done, done.length - 1, maxLen,
                           new HistEvent(event.changes.compose(lastEvent.changes), conc(event.effects, lastEvent.effects),
                                         lastEvent.mapped, lastEvent.startSelection, none))
